@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #000000;      /* Black background */
+  --text-primary: #FFFFFF;    /* White text */
+  /* Solana classic gradient palette */
+  --solana-teal: #00FFA3;
+  --solana-purple: #9945FF;
+  --solana-pink: #DC1FFF;
+  --accent-orange: var(--solana-purple);
+  --accent-orange-light: #B27CFF;
+  --accent-orange-dark: #7B2EFF;
+  --solana-gradient-main: linear-gradient(135deg, var(--solana-teal) 0%, var(--solana-purple) 50%, var(--solana-pink) 100%);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Override Tailwind-style hardcoded orange utility classes with Solana gradient */
+.text-\[\#FF8C00\],
+.text-\[\#FFA500\] {
+  color: var(--solana-teal) !important;
+}
+
+.bg-\[\#FF8C00\],
+.bg-\[\#FFA500\] {
+  background-color: var(--solana-purple) !important;
+  background-image: var(--solana-gradient-main) !important;
+}
+
+.border-\[\#FF8C00\],
+.border-\[\#FFA500\] {
+  border-color: var(--solana-purple) !important;
+}
+
+.hover\:bg-\[\#FF8C00\]:hover,
+.hover\:bg-\[\#FFA500\]:hover {
+  background-color: var(--solana-purple) !important;
+  background-image: var(--solana-gradient-main) !important;
+}
+
+/* Semi-transparent variants */
+.bg-\[\#FF8C00\]\/20 { background-color: rgba(153, 69, 255, 0.15) !important; }
+.bg-\[\#FF8C00\]\/30 { background-color: rgba(153, 69, 255, 0.25) !important; }
+.border-\[\#FF8C00\]\/20 { border-color: rgba(153, 69, 255, 0.2) !important; }
+.border-\[\#FF8C00\]\/30 { border-color: rgba(153, 69, 255, 0.3) !important; }
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Ensure toast is always visible */
+.fixed {
+  position: fixed;
+}

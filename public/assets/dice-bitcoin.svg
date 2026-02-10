@@ -1,0 +1,57 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Bitcoin icon gradient (orange instead of gold) -->
+    <linearGradient id="bitcoinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF7F00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filter for Bitcoin icons -->
+    <filter id="bitcoinGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 3D Dice Cube - Front view showing face-1 with large Bitcoin icon -->
+  <g transform="translate(100,100)">
+    <!-- Front face (face-1) - matches old frontend style -->
+    <rect x="-80" y="-80" width="160" height="160" 
+          rx="16" 
+          fill="rgba(255,255,255,0.05)" 
+          stroke="rgba(255,140,0,0.3)" 
+          stroke-width="2"
+          style="filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));"/>
+    
+    <!-- Large Bitcoin icon in center (like face-1 bitcoin-large) -->
+    <g filter="url(#bitcoinGlow)">
+      <!-- Circle background centered at (0,0) -->
+      <circle cx="0" cy="0" r="40" fill="url(#bitcoinGradient)" opacity="0.95"/>
+      
+      <!-- Bitcoin symbol centered using text element (easier to center) -->
+      <text x="0" y="8" 
+            font-family="Arial, sans-serif" 
+            font-size="48" 
+            font-weight="bold" 
+            fill="#000" 
+            text-anchor="middle" 
+            dominant-baseline="middle">₿</text>
+    </g>
+    
+    <!-- Right side face (slight 3D perspective) -->
+    <path d="M 80,-80 L 95,-65 L 95,95 L 80,80 Z" 
+          fill="rgba(255,255,255,0.03)" 
+          stroke="rgba(255,140,0,0.2)" 
+          stroke-width="1.5"/>
+    
+    <!-- Top side face (slight 3D perspective) -->
+    <path d="M -80,-80 L 80,-80 L 95,-95 L -95,-95 Z" 
+          fill="rgba(255,255,255,0.03)" 
+          stroke="rgba(255,140,0,0.2)" 
+          stroke-width="1.5"/>
+  </g>
+</svg>
