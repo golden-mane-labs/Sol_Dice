@@ -85,6 +85,16 @@ NEXT_PUBLIC_WS_URL=ws://localhost:8000
    - To verify a specific game:
      - Go to `/fair?id=<GAME_ID>` for detailed **provably fair verification**.
 
+## Screenshots
+
+Main game screen:
+
+![Solana Dice main game screen](./public/solana-dice-main.png)
+
+All bets history:
+
+![Solana Dice all bets history](./public/solana-dice-history.png)
+
 ## Frontend structure
 
 ### App routes (`src/app`)
